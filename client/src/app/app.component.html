@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <button (click)="dibujarRuta()" class="btn btn-dark">Establecer ruta</button>
+  <button (click)="testMarker()" class="ms-3 btn btn-danger">Establecer marcador</button>
+</div>
+
+<div class="wrapper">
+  <div class="box-inputs">
+    <div>
+      <div id="geocoder" #asGeoCoder class="geocoder"></div>
+    </div>
+
+
+    <div (click)="changeMode('inicio')" [ngClass]="{'active-way':modeInput ==='inicio'}">
+      <div class="fw-bold">Inicio</div>
+      <div class="mock-input">{{puntoPartida?.inicio?.place_name}}</div>
+    </div>
+
+    <div (click)="changeMode('final')" [ngClass]="{'active-way':modeInput ==='final'}">
+      <div class="fw-bold" >Final</div>
+      <div class="mock-input">{{puntoPartida?.final?.place_name}}</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <div id="map" #asMap class="map-container"></div>
+
+</div>

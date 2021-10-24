@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {SocketIoConfig, SocketIoModule} from "ngx-socket-io"
 
-const config: SocketIoConfig = {url: 'https://navegacion-tiempo-real.vercel.app', options: {}};
+const config: SocketIoConfig = {url: 'http://navegacion-tiempo-real.vercel.app', options: {}};
 
 @NgModule({
   declarations: [

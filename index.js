@@ -15,14 +15,6 @@ const io = require('socket.io')(server, {
 })
 
 
-// Serve static files
-app.use(express.static(__dirname + '/client/dist/client'));
-
-// Send all requests to index.html
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/client/dist/client/index.html'));
-});
-
 
 app.use((req,res,next)=>{
     res.header('Access-Control-Allow-Origin','*'); 
@@ -33,6 +25,10 @@ app.use((req,res,next)=>{
 });
 
 
+
+
+
+server.listen(PORT, () => {console.log('SERVIDOR CORRIENDO EN EL PUERTO:' + PORT)
 
 io.on('connection', (socket) => {
 
@@ -50,4 +46,5 @@ io.on('connection', (socket) => {
     })
 })
 
-server.listen(PORT, () => console.log('SERVIDOR CORRIENDO EN EL PUERTO:' + PORT))
+
+})

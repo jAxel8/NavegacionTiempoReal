@@ -7,7 +7,7 @@ const server = require('http').Server(app);
 
 app.use(cors());
 
-const PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 const io = require('socket.io')(server, {
     cors: {

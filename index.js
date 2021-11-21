@@ -25,7 +25,13 @@ app.use((req,res,next)=>{
 
 
 
+// Serve static files
+app.use(express.static(__dirname + 'client/dist/client'));
 
+// Send all requests to index.html
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname + 'client/dist/client/index.html'));
+});
 
 server.listen(PORT, () => {console.log('SERVIDOR CORRIENDO EN EL PUERTO:' + PORT)
 

@@ -4,9 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
-import {SocketIoConfig, SocketIoModule} from "ngx-socket-io"
 
-const config: SocketIoConfig = {url: 'http://navegacion-tiempo-real.vercel.app', options: {}};
 
 @NgModule({
   declarations: [
@@ -15,8 +13,7 @@ const config: SocketIoConfig = {url: 'http://navegacion-tiempo-real.vercel.app',
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    SocketIoModule.forRoot(config)
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

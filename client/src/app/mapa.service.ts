@@ -3,7 +3,7 @@ import * as mapboxgl from 'mapbox-gl' ;
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import {environment} from "../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {Socket} from "ngx-socket-io";
+import { io } from "socket.io-client";
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +18,9 @@ export class MapaService {
   zoom = 10;
   wayPoints: Array<any> = [];
   markerDriver: any = null;
+  public socket = io('http://localhost:3000');
 
-
-  constructor(private httpClient: HttpClient, private socket: Socket) {
+  constructor(private httpClient: HttpClient) {
     this.mapbox.accessToken = environment.mapPk;
    }
 
@@ -109,7 +109,8 @@ export class MapaService {
         padding: 100
       })
 
-      this.socket.emit('find-driver', {points: route});
+      this.socket.emit('find-driver',{points: route});
+
 
     });
 

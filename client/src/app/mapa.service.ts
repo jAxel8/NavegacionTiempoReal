@@ -18,7 +18,7 @@ export class MapaService {
   zoom = 10;
   wayPoints: Array<any> = [];
   markerDriver: any = null;
-  public socket = io('http://localhost:3000');
+  public socket = io('https://navegacion-tiempo-real.vercel.app');
 
   constructor(private httpClient: HttpClient) {
     this.mapbox.accessToken = environment.mapPk;

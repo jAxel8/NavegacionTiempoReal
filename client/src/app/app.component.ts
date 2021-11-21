@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   @ViewChild('asGeoCoder') asGeoCoder: ElementRef;
   modeInput = 'inicio';
   puntoPartida: puntoPartida = {inicio: null, final: null};
-  public socket = io('http://localhost:3000');
+  public socket = io('https://navegacion-tiempo-real.vercel.app');
   constructor(private _mapa:MapaService, private renderer2: Renderer2) {
   }
 

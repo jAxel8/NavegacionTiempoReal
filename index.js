@@ -24,11 +24,6 @@ app.use((req,res,next)=>{
 });
 
 
-
-
-server.listen(PORT, () => {console.log('SERVIDOR CORRIENDO EN EL PUERTO:' + PORT)
-
-
 io.on('connection',function(socket){
     socket.on('find-driver',({points}) =>{
         console.log('....',points);
@@ -43,6 +38,11 @@ io.on('connection',function(socket){
         },1200)
     })
 })
+
+server.listen(PORT, () => {console.log('SERVIDOR CORRIENDO EN EL PUERTO:' + PORT)
+
+
+
 
 
 })
